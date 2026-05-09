@@ -247,6 +247,7 @@ line-height:2;
 font-size:18px;
 text-align:center;
 color:#071a33;
+margin-top:30px;
 }
 
 @media(max-width:768px){
@@ -296,7 +297,7 @@ display:none;
 </h1>
 
 <p>
-تأمين سيارات عصري وسريع مع تجربة ذكية وشفافة بالكامل. بدون تعقيدات شركات التأمين التقليدية التي تتعامل معك كأنك تحاول دخول منشأة نووية
+تأمين سيارات عصري وسريع مع تجربة ذكية وشفافة بالكامل. بدون تعقيدات شركات التأمين التقليدية التي تتعامل معك كأنك تحاول دخول منشأة نووية.
 </p>
 
 <button onclick="document.getElementById('claims').scrollIntoView()">
@@ -449,10 +450,21 @@ capture="environment"
 
 <form
 class="claim-box"
-id="claimForm"
 action="https://formspree.io/f/xdablqqn"
 method="POST"
 enctype="multipart/form-data"
+>
+
+<input
+type="hidden"
+name="_subject"
+value="طلب تأمين جديد - إيسو"
+>
+
+<input
+type="hidden"
+name="_captcha"
+value="false"
 >
 
 <input
@@ -500,7 +512,13 @@ name="attachment"
 
 </form>
 
-<div id="statusMessage"></div>
+<div class="success-message">
+
+بعد إرسال الطلب سيتم مراجعته من الإدارة.<br><br>
+
+في حال الموافقة سيتم التواصل مع العميل عبر البريد الإلكتروني أو الهاتف لإكمال إجراءات الدفع.
+
+</div>
 
 </section>
 
@@ -549,14 +567,10 @@ let carBrand =
 document.getElementById("carBrand").value;
 
 let manufactureYear =
-parseInt(
-document.getElementById("manufactureYear").value
-);
+parseInt(document.getElementById("manufactureYear").value);
 
 let accidents =
-parseInt(
-document.getElementById("accidents").value
-);
+parseInt(document.getElementById("accidents").value);
 
 let usage =
 document.getElementById("usage").value;
@@ -565,8 +579,7 @@ let finalPrice = 0;
 
 if(carsDatabase[carBrand]){
 
-finalPrice =
-carsDatabase[carBrand].base;
+finalPrice = carsDatabase[carBrand].base;
 
 }else{
 
@@ -574,11 +587,9 @@ finalPrice = 130;
 
 }
 
-let currentYear =
-new Date().getFullYear();
+let currentYear = new Date().getFullYear();
 
-let age =
-currentYear - manufactureYear;
+let age = currentYear - manufactureYear;
 
 if(age <= 2){
 
@@ -606,8 +617,7 @@ finalPrice += 30;
 
 }
 
-finalPrice =
-Math.round(finalPrice);
+finalPrice = Math.round(finalPrice);
 
 document.getElementById("result").innerHTML =
 "السعر التقريبي: " +
@@ -616,59 +626,8 @@ finalPrice +
 
 }
 
-document.getElementById("claimForm").addEventListener("submit", async function(e){
-
-e.preventDefault();
-
-const form = e.target;
-
-const data = new FormData(form);
-
-try{
-
-await fetch(form.action,{
-method:"POST",
-body:data,
-headers:{
-'Accept':'application/json'
-}
-});
-
-form.reset();
-
-document.getElementById("statusMessage").innerHTML = `
-
-<div class="success-message">
-
-تم إرسال طلب التأمين بنجاح.<br><br>
-
-طلبك الآن قيد المراجعة من الإدارة.<br><br>
-
-بعد الموافقة سيتم التواصل معك عبر البريد الإلكتروني أو الهاتف لإكمال إجراءات الدفع.
-
-</div>
-
-`;
-
-}catch(error){
-
-document.getElementById("statusMessage").innerHTML = `
-
-<div class="success-message" style="background:#ffe5e5;color:#a30000;">
-
-حدث خطأ أثناء إرسال الطلب.<br>
-حاول مرة أخرى لاحقًا.
-
-</div>
-
-`;
-
-}
-
-});
-
 </script>
 
 </body>
 
-</html>
+  </html>
