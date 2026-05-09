@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -47,6 +48,11 @@ color:white;
 text-decoration:none;
 margin:0 12px;
 font-size:16px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#6db7ff;
 }
 
 .hero{
@@ -56,17 +62,27 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:40px;
-background:linear-gradient(rgba(7,26,51,.82),rgba(7,26,51,.82)),
+background:
+linear-gradient(rgba(7,26,51,.82),rgba(7,26,51,.82)),
 url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070')
 center/cover;
 color:white;
 }
 
-.hero-content{max-width:850px;}
+.hero-content{
+max-width:850px;
+}
 
-.hero-content h1{font-size:60px;margin-bottom:20px;}
+.hero-content h1{
+font-size:60px;
+margin-bottom:20px;
+}
 
-.hero-content p{font-size:21px;line-height:2;margin-bottom:35px;}
+.hero-content p{
+font-size:21px;
+line-height:2;
+margin-bottom:35px;
+}
 
 .hero button{
 padding:16px 40px;
@@ -76,6 +92,11 @@ background:#2d8fff;
 color:white;
 font-size:18px;
 cursor:pointer;
+transition:.3s;
+}
+
+.hero button:hover{
+transform:scale(1.05);
 }
 
 .section-title{
@@ -97,6 +118,16 @@ background:white;
 padding:35px;
 border-radius:24px;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#071a33;
 }
 
 .agencies{
@@ -117,18 +148,27 @@ border-radius:24px;
 border:1px solid #dce8f5;
 }
 
-.calculator,.scan-box,.claims,.payment{
+.agency h2{
+margin-bottom:15px;
+color:#071a33;
+}
+
+.calculator{
 padding:100px 8%;
 }
 
-.form-box,.claim-box,.payment-box{
+.form-box,
+.claim-box{
 max-width:700px;
 margin:auto;
 display:grid;
 gap:20px;
 }
 
-input,select,textarea{
+.form-box input,
+.form-box select,
+.claim-box input,
+.claim-box textarea{
 padding:16px;
 border-radius:14px;
 border:1px solid #ccc;
@@ -136,9 +176,13 @@ font-size:16px;
 width:100%;
 }
 
-textarea{height:140px;resize:none;}
+.claim-box textarea{
+height:140px;
+resize:none;
+}
 
-button{
+.form-box button,
+.claim-box button{
 padding:16px;
 background:#071a33;
 color:white;
@@ -146,9 +190,13 @@ border:none;
 border-radius:14px;
 font-size:18px;
 cursor:pointer;
+transition:.3s;
 }
 
-button:hover{background:#2d8fff;}
+.form-box button:hover,
+.claim-box button:hover{
+background:#2d8fff;
+}
 
 .price-result{
 text-align:center;
@@ -157,13 +205,29 @@ font-weight:700;
 color:#2d8fff;
 }
 
-.hidden{display:none;}
+.scan-box{
+padding:100px 8%;
+background:white;
+}
+
+.scan-note{
+text-align:center;
+margin-top:20px;
+font-size:18px;
+color:#555;
+line-height:1.8;
+}
 
 .contact{
 padding:100px 8%;
 background:#071a33;
 color:white;
 text-align:center;
+}
+
+.contact p{
+margin:15px 0;
+font-size:20px;
 }
 
 footer{
@@ -173,9 +237,32 @@ text-align:center;
 color:#bbb;
 }
 
+.success-message{
+max-width:700px;
+margin:auto;
+background:#eef5fc;
+padding:30px;
+border-radius:20px;
+line-height:2;
+font-size:18px;
+text-align:center;
+color:#071a33;
+}
+
 @media(max-width:768px){
-.hero-content h1{font-size:38px;}
-nav{display:none;}
+
+.hero-content h1{
+font-size:38px;
+}
+
+.hero-content p{
+font-size:17px;
+}
+
+nav{
+display:none;
+}
+
 }
 
 </style>
@@ -185,95 +272,403 @@ nav{display:none;}
 <body>
 
 <header>
-<div class="logo">إيسو</div>
+
+<div class="logo">
+إيسو
+</div>
+
 <nav>
 <a href="#">الرئيسية</a>
-<a href="#calculator">احسب</a>
-<a href="#claims">الطلب</a>
-<a href="#payment">الدفع</a>
+<a href="#companies">الشركات</a>
+<a href="#calculator">احسب السعر</a>
+<a href="#claims">تقديم الطلب</a>
+<a href="#contact">التواصل</a>
 </nav>
+
 </header>
 
 <section class="hero">
+
 <div class="hero-content">
-<h1>إيسو لوكالة التأمين السودانية</h1>
-<p>نظام تأمين إلكتروني. الطلب أولاً، الدفع لاحقاً بعد الموافقة. نعم، بهذه البساطة المنطقية.</p>
-<button onclick="document.getElementById('claims').scrollIntoView()">ابدأ</button>
+
+<h1>
+إيسو لوكالة التأمين السودانية
+</h1>
+
+<p>
+تأمين سيارات عصري وسريع مع تجربة ذكية وشفافة بالكامل. بدون تعقيدات شركات التأمين التقليدية التي تتعامل معك كأنك تحاول دخول منشأة نووية
+</p>
+
+<button onclick="document.getElementById('claims').scrollIntoView()">
+ابدأ الآن
+</button>
+
 </div>
+
+</section>
+
+<section class="features">
+
+<div class="card">
+<h3>تغطية شاملة</h3>
+<p>
+تغطية ضد الحوادث والأضرار والسرقة.
+</p>
+</div>
+
+<div class="card">
+<h3>مراجعة قبل الدفع</h3>
+<p>
+يتم مراجعة الطلب أولاً قبل إرسال رابط الدفع.
+</p>
+</div>
+
+<div class="card">
+<h3>رفع المستندات</h3>
+<p>
+رفع بطاقة السيارة والمرفقات إلكترونيًا.
+</p>
+</div>
+
+<div class="card">
+<h3>دعم مباشر</h3>
+<p>
+التواصل مع الوكالة عبر الهاتف أو البريد الإلكتروني.
+</p>
+</div>
+
+</section>
+
+<section class="agencies" id="companies">
+
+<h2 class="section-title">
+شركات التأمين المتوفرة
+</h2>
+
+<div class="agency-grid">
+
+<div class="agency">
+<h2>شيكان للتأمين</h2>
+<p>
+تأمين سيارات وتأمين شامل وخدمات متعددة داخل السودان.
+</p>
+</div>
+
+<div class="agency">
+<h2>التعاونية للتأمين</h2>
+<p>
+حلول تأمين متنوعة للأفراد والشركات.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="calculator" id="calculator">
+
+<h2 class="section-title">
+احسب سعر التأمين
+</h2>
+
+<div class="form-box">
+
+<select id="carBrand">
+
+<option value="">اختر نوع السيارة</option>
+
+<option>Toyota</option>
+<option>Hyundai</option>
+<option>Kia</option>
+<option>Mercedes</option>
+<option>BMW</option>
+<option>Nissan</option>
+
+</select>
+
+<input
+type="number"
+id="manufactureYear"
+placeholder="سنة الصنع"
+>
+
+<select id="accidents">
+
+<option value="0">بدون حوادث</option>
+<option value="1">حادث واحد</option>
+<option value="2">حادثين</option>
+<option value="3">3 حوادث أو أكثر</option>
+
+</select>
+
+<select id="usage">
+
+<option value="خفيف">استخدام خفيف</option>
+<option value="متوسط">استخدام متوسط</option>
+<option value="مرتفع">استخدام مرتفع</option>
+
+</select>
+
+<button onclick="calculatePrice()">
+احسب السعر
+</button>
+
+<div class="price-result" id="result"></div>
+
+</div>
+
+</section>
+
+<section class="scan-box">
+
+<h2 class="section-title">
+رفع بطاقة السيارة
+</h2>
+
+<div class="form-box">
+
+<input
+type="file"
+accept="image/*"
+capture="environment"
+>
+
+<div class="scan-note">
+قم بتصوير بطاقة السيارة ليتم إرسالها مع الطلب.
+</div>
+
+</div>
+
 </section>
 
 <section class="claims" id="claims">
 
-<h2 class="section-title">تقديم طلب تأمين</h2>
+<h2 class="section-title">
+تقديم طلب تأمين
+</h2>
 
-<form class="claim-box" id="claimForm" action="https://formspree.io/f/xdablqqn" method="POST">
+<form
+class="claim-box"
+id="claimForm"
+action="https://formspree.io/f/xdablqqn"
+method="POST"
+enctype="multipart/form-data"
+>
 
-<input type="text" name="full_name" placeholder="الاسم" required>
-<input type="email" name="email" placeholder="الإيميل" required>
-<input type="text" name="phone" placeholder="الهاتف" required>
-<input type="text" name="car_type" placeholder="السيارة" required>
-<textarea name="details" placeholder="تفاصيل الطلب" required></textarea>
+<input
+type="text"
+name="full_name"
+placeholder="الاسم الكامل"
+required
+>
 
-<button type="submit">إرسال الطلب</button>
+<input
+type="email"
+name="email"
+placeholder="البريد الإلكتروني"
+required
+>
+
+<input
+type="text"
+name="phone"
+placeholder="رقم الهاتف"
+required
+>
+
+<input
+type="text"
+name="car_type"
+placeholder="نوع السيارة"
+required
+>
+
+<textarea
+name="details"
+placeholder="تفاصيل الطلب"
+required
+></textarea>
+
+<input
+type="file"
+name="attachment"
+>
+
+<button type="submit">
+إرسال الطلب
+</button>
 
 </form>
 
-<div id="statusMsg" style="text-align:center;margin-top:20px;"></div>
+<div id="statusMessage"></div>
 
 </section>
 
-<section class="payment hidden" id="payment">
+<section class="contact" id="contact">
 
-<h2 class="section-title">الدفع بعد الموافقة</h2>
+<h2 class="section-title" style="color:white;">
+تواصل معنا
+</h2>
 
-<form class="payment-box" action="https://formspree.io/f/xdablqqn" method="POST">
+<p>
+📞 50 021 6897
+</p>
 
-<input type="text" name="sender_name" placeholder="اسم المحول" required>
-<input type="number" name="amount" placeholder="المبلغ" required>
-<input type="file" name="receipt" required>
+<p>
+📧 esrasaifeldeen@gmail.com
+</p>
 
-<div style="background:#eef5fc;padding:20px;border-radius:16px;text-align:center;">
-رقم الحساب<br><b>02513629730001</b>
-</div>
-
-<button type="submit">إرسال الدفع</button>
-
-</form>
+<p>
+إيسو لوكالة التأمين السودانية
+</p>
 
 </section>
+
+<footer>
+
+© 2026 جميع الحقوق محفوظة لوكالة إيسو
+
+</footer>
 
 <script>
 
-let approved = false;
+const carsDatabase = {
+
+"Toyota": { base:120 },
+"Hyundai": { base:110 },
+"Kia": { base:105 },
+"Mercedes": { base:260 },
+"BMW": { base:280 },
+"Nissan": { base:115 }
+
+};
+
+function calculatePrice(){
+
+let carBrand =
+document.getElementById("carBrand").value;
+
+let manufactureYear =
+parseInt(
+document.getElementById("manufactureYear").value
+);
+
+let accidents =
+parseInt(
+document.getElementById("accidents").value
+);
+
+let usage =
+document.getElementById("usage").value;
+
+let finalPrice = 0;
+
+if(carsDatabase[carBrand]){
+
+finalPrice =
+carsDatabase[carBrand].base;
+
+}else{
+
+finalPrice = 130;
+
+}
+
+let currentYear =
+new Date().getFullYear();
+
+let age =
+currentYear - manufactureYear;
+
+if(age <= 2){
+
+finalPrice += 80;
+
+}else if(age <= 5){
+
+finalPrice += 40;
+
+}else{
+
+finalPrice += 10;
+
+}
+
+finalPrice += accidents * 35;
+
+if(usage === "مرتفع"){
+
+finalPrice += 60;
+
+}else if(usage === "متوسط"){
+
+finalPrice += 30;
+
+}
+
+finalPrice =
+Math.round(finalPrice);
+
+document.getElementById("result").innerHTML =
+"السعر التقريبي: " +
+finalPrice +
+" دولار سنويًا";
+
+}
 
 document.getElementById("claimForm").addEventListener("submit", async function(e){
+
 e.preventDefault();
 
-let form = e.target;
-let data = new FormData(form);
+const form = e.target;
+
+const data = new FormData(form);
+
+try{
 
 await fetch(form.action,{
 method:"POST",
 body:data,
-headers:{'Accept':'application/json'}
+headers:{
+'Accept':'application/json'
+}
 });
 
-form.style.display="none";
+form.reset();
 
-document.getElementById("statusMsg").innerHTML =
-"طلبك وصل. الآن انتظر الموافقة (أيوه، زي أي نظام محترم في العالم).";
+document.getElementById("statusMessage").innerHTML = `
 
-// محاكاة موافقة الإدارة
-setTimeout(()=>{
-approved = true;
-document.getElementById("payment").classList.remove("hidden");
-document.getElementById("statusMsg").innerHTML =
-"تمت الموافقة. يمكنك الدفع الآن.";
-},5000);
+<div class="success-message">
+
+تم إرسال طلب التأمين بنجاح.<br><br>
+
+طلبك الآن قيد المراجعة من الإدارة.<br><br>
+
+بعد الموافقة سيتم التواصل معك عبر البريد الإلكتروني أو الهاتف لإكمال إجراءات الدفع.
+
+</div>
+
+`;
+
+}catch(error){
+
+document.getElementById("statusMessage").innerHTML = `
+
+<div class="success-message" style="background:#ffe5e5;color:#a30000;">
+
+حدث خطأ أثناء إرسال الطلب.<br>
+حاول مرة أخرى لاحقًا.
+
+</div>
+
+`;
+
+}
 
 });
 
 </script>
 
 </body>
+
 </html>
