@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم — إيسو</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ===================== Dashboard main ===================== -->
+  <main class="dash-main">
+
+    <!-- Sidebar -->
+    <nav class="dash-sidebar">
+      <button class="sidebar-toggle" aria-label="فتح القائمة">☰</button>
+      <ul>
+        <li class="active"><a href="#"><span class="icon">🏠</span> الرئيسية</a></li>
+        <li><a href="#"><span class="icon">📄</span> الطلبات</a></li>
+        <li><a href="#"><span class="icon">🧾</span> الفواتير</a></li>
+        <li><a href="#"><span class="icon">👥</span> العملاء</a></li>
+        <li><a href="#"><span class="icon">🏢</span> شركات التأمين</a></li>
+        <li><a href="#"><span class="icon">🧑‍💼</span> الموظفين</a></li>
+        <li><a href="#"><span class="icon">📊</span> التقارير</a></li>
+        <li><a href="#"><span class="icon">⚙️</span> الإعدادات</a></li>
+      </ul>
+      <a href="#" class="logout-link"><span class="icon">↩</span> تسجيل خروج</a>
+    </nav>
+
+    <div class="dash-content">
+
+      <!-- Stat cards -->
+      <section class="stat-row">
+        <div class="stat-card">
+          <span class="stat-icon danger">✕</span>
+          <div>
+            <strong>23</strong>
+            <span>تم الرفض</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon warning">⏳</span>
+          <div>
+            <strong>43</strong>
+            <span>قيد المراجعة</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon success">✓</span>
+          <div>
+            <strong>62</strong>
+            <span>تمت الموافقة</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon neutral">🗂</span>
+          <div>
+            <strong>128</strong>
+            <span>إجمالي الطلبات</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Requests table -->
+      <section class="table-card">
+        <h2>أحدث الطلبات</h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>الإجراءات</th>
+                <th>تاريخ الطلب</th>
+                <th>المبلغ</th>
+                <th>شركة التأمين</th>
+                <th>نوع التأمين</th>
+                <th>اسم العميل</th>
+                <th>#</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><button class="row-view">👁</button></td>
+                <td>2024-05-20</td>
+                <td><span class="badge badge-danger">قيد المراجعة</span></td>
+                <td>شيكان رنس</td>
+                <td>تأمين شامل</td>
+                <td>محمد أحمد</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td><button class="row-view">👁</button></td>
+                <td>2024-05-19</td>
+                <td><span class="badge badge-warning">تحت المراجعة</span></td>
+                <td>التعاون رنس</td>
+                <td>تأمين ضد الغير</td>
+                <td>عبدالله حسن</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td><button class="row-view">👁</button></td>
+                <td>2024-05-18</td>
+                <td><span class="badge badge-danger">قيد المراجعة</span></td>
+                <td>شيكان رنس</td>
+                <td>تأمين شامل</td>
+                <td>علي إبراهيم</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td><button class="row-view">👁</button></td>
+                <td>2024-05-18</td>
+                <td><span class="badge badge-warning">تحت المراجعة</span></td>
+                <td>التعاونية رنس</td>
+                <td>تأمين شامل بحدود</td>
+                <td>سارة محمد</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td><button class="row-view">👁</button></td>
+                <td>2024-05-17</td>
+                <td><span class="badge badge-warning">تحت المراجعة</span></td>
+                <td>شيكان رنس</td>
+                <td>تأمين ضد الغير الممتد</td>
+                <td>أحمد علي</td>
+                <td>5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="#" class="show-all">عرض جميع الطلبات</a>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+
+<script type="module" src="auth-gate.js"></script>
+<script src="forms.js"></script>
+</body>
+</html>
