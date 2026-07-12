@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@300;400;500;700&family=Playfair+Display:wght@700;800;900&display=swap');
+
+/* ==========================================================================
+   ESSO — Design Tokens
+   ========================================================================== */
+:root{
+  --bg-0:#060606;
+  --bg-1:#141416;
+  --bg-2:#1b1b1e;
+  --bg-3:#212124;
+  --border:#2a2a2e;
+  --border-soft:#242426;
+
+  --gold:#f2c410;
+  --gold-light:#ffdd4d;
+  --gold-dark:#b8930a;
+  --gold-wash:rgba(242,196,16,.1);
+
+  --text-hi:#f5f4f0;
+  --text-mid:#c7c5bf;
+  --text-low:#8b8a86;
+
+  --danger:#e0616a;
+  --danger-bg:rgba(224,97,106,.12);
+  --success:#4fb87a;
+  --success-bg:rgba(79,184,122,.12);
+  --warning:#e0b34c;
+  --warning-bg:rgba(224,179,76,.12);
+
+  --radius-s:8px;
+  --radius-m:14px;
+  --radius-l:22px;
+
+  --font-display:'Playfair Display', 'Cairo', serif;
+  --font-body:'Tajawal', 'Cairo', sans-serif;
+
+  --shadow-card: 0 10px 30px -12px rgba(0,0,0,.6);
+  --shadow-gold: 0 8px 24px -8px rgba(242,196,16,.4);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  background:var(--bg-0);
+  color:var(--text-hi);
+  font-family:var(--font-body);
+  direction:rtl;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+input,select{ font-family:inherit; }
+ul{ list-style:none; margin:0; padding:0; }
+h1,h2,h3,h4,p{ margin:0; }
+
+/* focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible{
+  outline:2px solid var(--gold-light);
+  outline-offset:2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
+
+/* ==========================================================================
+   Shared components
+   ========================================================================== */
+.container{
+  width:min(1320px, 92%);
+  margin-inline:auto;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--gold);
+  font-weight:700;
+  font-size:.95rem;
+}
+.eyebrow svg{ width:18px; height:18px; }
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 26px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:.95rem;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-gold{
+  background:linear-gradient(180deg, var(--gold-light), var(--gold));
+  color:#1b1204;
+  box-shadow:var(--shadow-gold);
+}
+.btn-gold:hover{ transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(217,169,74,.6); }
+.btn-ghost{
+  border:1px solid var(--border);
+  color:var(--text-hi);
+  background:var(--bg-1);
+}
+.btn-ghost:hover{ border-color:var(--gold-dark); color:var(--gold-light); }
+
+.card{
+  background:var(--bg-1);
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius-m);
+  box-shadow:var(--shadow-card);
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  padding:4px 12px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:700;
+}
+.badge-danger{ background:var(--danger-bg); color:var(--danger); }
+.badge-success{ background:var(--success-bg); color:var(--success); }
+.badge-warning{ background:var(--warning-bg); color:var(--warning); }
+
+.form-status{
+  border-radius:10px;
+  padding:14px 16px;
+  font-size:.88rem;
+  font-weight:600;
+  text-align:center;
+}
+.form-status[hidden]{ display:none; }
+.form-status.is-success{ background:var(--success-bg); color:var(--success); }
+.form-status.is-error{ background:var(--danger-bg); color:var(--danger); }
+
+.btn[disabled]{ opacity:.6; cursor:not-allowed; transform:none !important; }

@@ -1,0 +1,11 @@
+body{
+  direction:ltr;
+  font-family:'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.split-col h2,
+.types-heading h2,
+.partners-title,
+.contact-copy h2{
+  font-family:'Cairo', sans-serif;
+}
