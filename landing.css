@@ -54,7 +54,7 @@
   background:
     linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 30%, rgba(0,0,0,.35) 55%, transparent 75%),
     radial-gradient(ellipse at 75% 40%, rgba(245,204,0,.10), transparent 55%),
-   url('images/hero-car.jpg') center/cover no-repeat;
+   url('images/hero-car.png') center/cover no-repeat;
 }
 .hero-v2-ltr .hero-v2-bg{
   background:
