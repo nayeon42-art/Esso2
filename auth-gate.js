@@ -14,7 +14,7 @@ import {
 // فهو مجرد فلتر بسيط يمنع التسجيل العشوائي، مش حماية قوية 100%.
 // لو حسيتي إنه اتسرب، غيّريه في أي وقت من هنا.
 // ============================================================
-const STAFF_ACCESS_CODE = "ESSO-STAFF-2026";
+const STAFF_ACCESS_CODE = "ESSO-STAFF-meles7";
 
 // -------- صفحة إنشاء حساب جديد (register.html) --------
 const registerForm = document.getElementById('registerForm');
